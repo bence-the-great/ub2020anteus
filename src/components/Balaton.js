@@ -18,9 +18,6 @@ const colors = {
 };
 
 const Balaton = () => {
-  const [position, setPosition] = useState(balaton);
-  const [highlightedAthlete, setHighlightedAthlete] = useState(null);
-
   const renderMarkers = () => {
     return checkpoints.map(checkpoint => {
       return (
@@ -104,7 +101,7 @@ const Balaton = () => {
   };
 
   return (
-    <Map center={[position.latitude, position.longitude]} zoom={position.zoom} style={{height: '100vh'}}>
+    <Map center={[balaton.latitude, balaton.longitude]} zoom={balaton.zoom} style={{height: '100vh'}}>
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
